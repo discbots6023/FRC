@@ -11,7 +11,7 @@ import edu.wpi.first.wpilibj.AnalogGyro;
 import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Joystick;
-import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
+
 import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
@@ -30,9 +30,9 @@ import frc.robot.commands.*;
  */
 public class DriveTrain extends Subsystem {
   private final SpeedController m_leftMotor
-      = new SpeedControllerGroup(new WPI_TalonSRX(RobotMap.DRIVETRAIN_LEFT_FRONT), new WPI_TalonSRX(RobotMap.DRIVETRAIN_LEFT_BACK));
+      = new SpeedControllerGroup(new Spark(RobotMap.DRIVETRAIN_LEFT_FRONT), new Spark(RobotMap.DRIVETRAIN_LEFT_BACK));
   private final SpeedController m_rightMotor
-      = new SpeedControllerGroup(new WPI_TalonSRX(RobotMap.DRIVETRAIN_RIGHT_FRONT), new WPI_TalonSRX(RobotMap.DRIVETRAIN_RIGHT_BACK));
+      = new SpeedControllerGroup(new Spark(RobotMap.DRIVETRAIN_RIGHT_FRONT), new Spark(RobotMap.DRIVETRAIN_RIGHT_BACK));
   
  
   private final DifferentialDrive m_drive
