@@ -15,8 +15,11 @@ import edu.wpi.first.wpilibj.CameraServer;
 import frc.robot.subsystems.DriveTrain;
 import frc.robot.subsystems.Lift;
 import frc.robot.subsystems.Pivot;
-import frc.robot.subsystems.HatchArm;
+import frc.robot.subsystems.ePivot;
+
+
 import frc.robot.subsystems.*;
+
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -30,10 +33,12 @@ public class Robot extends TimedRobot {
 
   public static DriveTrain m_drivetrain;
   public static Pivot m_pivot;
-  public static Lift m_lift;
+  public static eLift m_elift;
   public static Shooter m_shooter;
-  public static HatchArm m_hatcharm;
+  public static BackClimber m_backclimber;
+  public static FrontClimber m_frontclimber;
   public static OI m_oi;
+  public static ePivot m_ePivot;
 
   /**
    * This function is run when the robot is first started up and should be used
@@ -44,19 +49,26 @@ public class Robot extends TimedRobot {
     // Initialize all subsystems
     m_drivetrain = new DriveTrain();
     m_pivot = new Pivot();
-    m_lift = new Lift();
+    m_elift = new eLift();
     m_shooter = new Shooter();
-    m_hatcharm = new HatchArm();
+    m_backclimber = new BackClimber();
+    m_frontclimber = new FrontClimber();
     m_oi = new OI();
-    // CameraServer.getInstance().startAutomaticCapture();
+    //m_ePivot = new ePivot();
+    CameraServer.getInstance().startAutomaticCapture();
 
     // instantiate the command used for the autonomous period
 
     // Show what command your subsystem is running on the SmartDashboard
     SmartDashboard.putData(m_drivetrain);
-    SmartDashboard.putData(m_lift);
-    SmartDashboard.putData(m_hatcharm);
+    SmartDashboard.putData(m_elift);
+    SmartDashboard.putData(m_backclimber);
+    SmartDashboard.putData(m_frontclimber);
     SmartDashboard.putData(m_shooter);
+    //SmartDashboard.putData(m_ePivot);
+    m_backclimber.Retract();
+    m_frontclimber.Retract();
+
   }
 
   @Override
@@ -79,7 +91,11 @@ public class Robot extends TimedRobot {
     // teleop starts running. If you want the autonomous to
     // continue until interrupted by another command, remove
     // this line or comment it out.
-    // m_autonomousCommand.cancel();
+    // m_autonomousCommand.cancel(); m_backclimber.Retract();
+    m_frontclimber.Retract();
+    m_backclimber.Retract();
+
+
   }
 
   /**
@@ -102,11 +118,13 @@ public class Robot extends TimedRobot {
    * The log method puts interesting information to the SmartDashboard.
    */
   private void log() {
-    m_lift.log();
+    m_elift.log();
     m_pivot.log();
     m_drivetrain.log();
     m_shooter.log();
-    m_hatcharm.log();
+    m_backclimber.log();
+    m_frontclimber.log();
+    //m_ePivot.log();
 
   }
 }

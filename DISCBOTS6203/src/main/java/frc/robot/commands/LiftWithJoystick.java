@@ -15,13 +15,13 @@ import frc.robot.Robot;
  */
 public class LiftWithJoystick extends Command {
   public LiftWithJoystick() {
-    requires(Robot.m_lift);
+    requires(Robot.m_elift);
     }
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.m_lift.move(Robot.m_oi.m_joystick.getRawAxis(5));
+    Robot.m_elift.move(Robot.m_oi.m_joystick.getRawAxis(5));
     //Robot.m_lift.move(.5);
   }
 
@@ -39,6 +39,6 @@ public class LiftWithJoystick extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    Robot.m_lift.move(0);
+    Robot.m_elift.move(0);
   }
 }

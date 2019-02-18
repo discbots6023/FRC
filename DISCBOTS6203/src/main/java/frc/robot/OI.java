@@ -34,11 +34,13 @@ public class OI {
   public OI() {
     // Put Some buttons on the SmartDashboard
     
-    SmartDashboard.putData("Lift Bottom", new SetLiftSetpoint(0));
-    SmartDashboard.putData("Lift Middle", new SetLiftSetpoint(2));
-    SmartDashboard.putData("Lift Top", new SetLiftSetpoint(4));
-    SmartDashboard.putData("Hatch Arm Deploy", new HatchArmDeploy());
-    SmartDashboard.putData("Hatch Arm Retract", new HatchArmRetract());
+    
+    SmartDashboard.putData("Back Climber Deploy", new BackDeploy());
+    SmartDashboard.putData("Back Climber Retract", new BackRetract());
+    SmartDashboard.putData("Front Climber Deploy", new FrontDeploy());
+    SmartDashboard.putData("Front Climber Retract", new FrontRetract());
+    SmartDashboard.putData("Pivot Retract", new PivotRetract());
+    SmartDashboard.putData("Pivot Deploy", new PivotDeploy());
     SmartDashboard.putData("Lift With Joystick", new LiftWithJoystick());
     
     // Gamepad 1 Buttons
@@ -50,23 +52,32 @@ public class OI {
     
     final JoystickButton buttona = new JoystickButton(m_joystick, 1);
     final JoystickButton buttony = new JoystickButton(m_joystick, 4);
+    final JoystickButton Bbuttony = new JoystickButton(m_joystick, 2);
+    final JoystickButton Xbutonny= new JoystickButton(m_joystick, 3);
 
     final JoystickButton lbumper = new JoystickButton(m_joystick, 5);
+    final JoystickButton buttonsta = new JoystickButton(m_joystick, 8);
+    final JoystickButton buttonrb = new JoystickButton(m_joystick, 6);
+    
     
 
     final JoystickButton dpadUp = new JoystickButton(m_joystick, 7);
-    final JoystickButton dpadDown = new JoystickButton(m_joystick, 8);
+    final JoystickButton dpadDown = new JoystickButton(m_joystick, 13);
     final JoystickButton l2 = new JoystickButton(m_joystick, 9);
     final JoystickButton r2 = new JoystickButton(m_joystick, 10);
     final JoystickButton l1 = new JoystickButton(m_joystick, 11);
     final JoystickButton r1 = new JoystickButton(m_joystick, 12);
 
     // Connect the buttons to commands
-    dpadUp.whenPressed(new SetLiftSetpoint(6));
-    dpadDown.whenPressed(new SetLiftSetpoint(2));
-    buttony.whenPressed(new HatchArmDeploy());
-    lbumper.whenPressed(new HatchArmRetract());
+    
+    buttony.whenPressed(new BackDeploy());
+    lbumper.whenPressed(new BackRetract());
     rbumper.whenPressed(new Shoot());
+    Xbutonny.whenPressed(new FrontRetract());
+    Bbuttony.whenPressed(new FrontDeploy());
+    buttonrb.whenPressed(new PivotDeploy());
+    buttonsta.whenPressed(new PivotRetract());
+
     
 
     

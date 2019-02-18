@@ -44,7 +44,7 @@ public class Lift extends PIDSubsystem {
     }
     setAbsoluteTolerance(0.005);
 
-    m_motor = new Spark(RobotMap.LIFT);
+    m_motor = new Spark(9);
     m_encoder = new Encoder(RobotMap.LIFT_CHANNELA, RobotMap.LIFT_CHANNELB);
     
     //m_toplimitswitch = new DigitalInput(RobotMap.TOP_LIMITSWITCH);

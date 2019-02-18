@@ -25,8 +25,9 @@ public class RobotMap {
 	public static final int DRIVETRAIN_LEFT_BACK = 1;
 	public static final int DRIVETRAIN_RIGHT_FRONT = 2;
 	public static final int DRIVETRAIN_RIGHT_BACK = 3;
-	public static final int LIFT = 4;
-	public static final int PIVOT = 5;
+	public static final int LIFT1 = 4;
+	public static final int LIFT2 = 5;
+	public static final int PIVOT = 6;
 	public static final int SHOOTER = 7;
 
 	//Encoders
@@ -46,8 +47,13 @@ public class RobotMap {
 	public static final int DRIVER_CONTROLLER_ROTATE_AXIS = 2;
 
 	// Solenoids
-	public static final int HATCHARM_SOLENOID_DEPLOY = 1;
-	public static final int HATCHARM_SOLENOID_RETRACT = 0;
+	public static final int BACKCLIMBER_SOLENOID_DEPLOY = 1;
+	public static final int BACKCLIMBER_SOLENOID_RETRACT = 0;
+	public static final int FRONTCLIMBER_SOLENOID_DEPLOY = 2;
+	public static final int FRONTCLIMBER_SOLENOID_RETRACT = 3;
+	public static final int PIVOT_SOLENOID_DEPLOY = 4;
+	public static final int PIVOT_SOLENOID_RETRACT = 5;
+
 
 	//Limit Switches
 	public static final int TOP_LIMITSWITCH = 0;

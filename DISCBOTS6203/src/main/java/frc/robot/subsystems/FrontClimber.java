@@ -16,30 +16,30 @@ import frc.robot.RobotMap;
 /**
  * Add your docs here.
  */
-public class HatchArm extends Subsystem {
+public class FrontClimber extends Subsystem {
 	// Put methods for controlling this subsystem
 	// here. Call these from Commands.
 	DoubleSolenoid armSolenoid = null;
 
-	public HatchArm() {
+	public FrontClimber() {
 		super();
-		armSolenoid = new DoubleSolenoid(RobotMap.HATCHARM_SOLENOID_DEPLOY,
-				RobotMap.HATCHARM_SOLENOID_RETRACT);
+		armSolenoid = new DoubleSolenoid(RobotMap.FRONTCLIMBER_SOLENOID_DEPLOY,
+				RobotMap.FRONTCLIMBER_SOLENOID_RETRACT);
 				armSolenoid.set(Value.kOff);
-		addChild("Arm", armSolenoid);
-		SmartDashboard.putData("Hatch Arm", (DoubleSolenoid) armSolenoid);
+		addChild("FrontClimber", armSolenoid);
+		SmartDashboard.putData("Front Climber", (DoubleSolenoid) armSolenoid);
 	
 	}
 
 	public void Deploy() {
 		
 		//armSolenoid.set(Value.kOff);
-		armSolenoid.set(Value.kReverse);
+		armSolenoid.set(Value.kForward);
 	}
 
 	public void Retract() {
 		//armSolenoid.set(Value.kOff);
-		armSolenoid.set(Value.kForward);
+		armSolenoid.set(Value.kReverse);
 		
 	}
 
@@ -49,7 +49,7 @@ public class HatchArm extends Subsystem {
 		// setDefaultCommand(new MySpecialCommand());
 	}
 	public void log() {
-		SmartDashboard.putData("Hatch Arm", (DoubleSolenoid) armSolenoid);
+		SmartDashboard.putData("Front Climber", (DoubleSolenoid) armSolenoid);
 		
 	}
 }
