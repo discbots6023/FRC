@@ -101,7 +101,7 @@ public class DriveTrain extends Subsystem {
     SmartDashboard.putNumber("Left Power", left);
     SmartDashboard.putNumber("Right Power", right);
     //m_drive.tankDrive(left, right);
-    m_drive.arcadeDrive(left, right);
+    m_drive.tankDrive(-left, -right);
   }
 
   /**
@@ -115,7 +115,7 @@ public class DriveTrain extends Subsystem {
 
   public void drive(double left, double right, double rotate) {
     SmartDashboard.putNumber("Turn Degrees", rotate);
-    m_drive.arcadeDrive(left, rotate);
+    m_drive.tankDrive (left, rotate);
   }
 
   /**
