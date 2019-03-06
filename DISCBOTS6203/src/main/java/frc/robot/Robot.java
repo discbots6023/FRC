@@ -73,7 +73,7 @@ public class Robot extends TimedRobot {
 
   @Override
   public void autonomousInit() {
-    m_autonomousCommand.start(); // schedule the autonomous command (example)
+    //m_autonomousCommand.start(); // schedule the autonomous command (example)
   }
 
   /**
@@ -81,8 +81,10 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void autonomousPeriodic() {
-    Scheduler.getInstance().run();
-    log();
+   // Scheduler.getInstance().run();
+   // log();
+    teleopPeriodic();
+
   }
 
   @Override

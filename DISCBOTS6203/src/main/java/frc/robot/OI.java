@@ -52,10 +52,10 @@ public class OI {
     
     final JoystickButton buttona = new JoystickButton(m_joystick, 1);
     final JoystickButton buttony = new JoystickButton(m_joystick, 4);
-    final JoystickButton Bbuttony = new JoystickButton(m_joystick, 2);
-    final JoystickButton Xbutonny= new JoystickButton(m_joystick, 3);
+    final JoystickButton buttonb = new JoystickButton(m_joystick, 2);
+    final JoystickButton buttonx= new JoystickButton(m_joystick, 3);
 
-    final JoystickButton lbumper = new JoystickButton(m_joystick, 5);
+    //final JoystickButton buttona = new JoystickButton(m_joystick, 1);
     final JoystickButton buttonsta = new JoystickButton(m_joystick, 8);
     final JoystickButton buttonrb = new JoystickButton(m_joystick, 6);
     
@@ -70,11 +70,11 @@ public class OI {
 
     // Connect the buttons to commands
     
-    buttony.whenPressed(new BackDeploy());
-    lbumper.whenPressed(new BackRetract());
+    buttonb.whenPressed(new BackDeploy());
+    buttonx.whenPressed(new BackRetract());
     rbumper.whenPressed(new Shoot());
-    Xbutonny.whenPressed(new FrontRetract());
-    Bbuttony.whenPressed(new FrontDeploy());
+    buttona.whenPressed(new FrontRetract());
+    buttony.whenPressed(new FrontDeploy());
     buttonrb.whenPressed(new PivotDeploy());
     buttonsta.whenPressed(new PivotRetract());
 
